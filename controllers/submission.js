@@ -23,8 +23,8 @@ function calculateDaysDifference(date1, date2) {
 }
 
 function getDayNumber() {
-  // Set the target date (5 Nov 2023 12:00 AM in Asia/Kolkata)
-  const targetDate = new Date('2023-12-05T00:00:00Z');
+  // Set the target date (4 Nov 2023 12:00 AM in Asia/Kolkata)
+  const targetDate = new Date('2023-12-04T00:00:00Z');
   targetDate.toLocaleString('en-US', { timeZone: 'Asia/Kolkata' });
 
   // Get the current local time in Asia/Kolkata
@@ -53,6 +53,7 @@ async function handleAddSubmission(req, res) {
     }
     const curDayNo = getDayNumber();
     const currentDayNo = curDayNo < 0 ? 0 : curDayNo;
+    console.log(currentDayNo);
     if (currentDayNo - dayNo > 1 || currentDayNo - dayNo < 0) {
       return res
         .status(400)
