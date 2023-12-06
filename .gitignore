@@ -1,5 +1,5 @@
 /node_modules
-*.db
+# *.db
 .env
 /service/auth.js
 /service/private_key.pem
